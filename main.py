@@ -3,23 +3,24 @@ from flask import Flask
 from flask_scheduler import Scheduler
 import indicator
 import datetime
+import json
 
 app = Flask(__name__)
 
-# Initialize the extension
-scheduler = Scheduler(app)
+# # Initialize the extension
+# scheduler = Scheduler(app)
 
-# scheduler config interval
-app.config['SCHEDULER_API_INTERVAL'] = 600 # in seconds
+# # scheduler config interval
+# app.config['SCHEDULER_API_INTERVAL'] = 600 # in seconds
 
-@scheduler.runner(interval=7200)
-def my_task():
-    print('tick')
-    f = open("static/result.txt", "a", encoding="utf-8")
+# @scheduler.runner(interval=7200)
+# def my_task():
+#     print('tick')
+#     f = open("static/result.txt", "a", encoding="utf-8")
 
-    string_to_write = '\n' + datetime.datetime.now().strftime("%c") + " | " + indicator.getData()
-    f.write(string_to_write)
-    f.close()
+#     string_to_write = '\n' + datetime.datetime.now().strftime("%c") + " | " + indicator.getData()
+#     f.write(string_to_write)
+#     f.close()
 
 
 
@@ -27,4 +28,9 @@ def my_task():
 @app.route("/")
 def hello_world():
     return "<p><a href='/static/result.txt'>Перейти в точку входа</a>!</p>"
+    
+@app.route("/get-hydra")
+def getHydra():
+	
+    return json.dumps(indicator.getData())
     

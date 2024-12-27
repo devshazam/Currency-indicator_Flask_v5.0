@@ -35,7 +35,8 @@ def getData():
 
     # print(" №1=" + str(x1) + ' | №2=' + str(x2) + " | №3=" + str(x3) + " | №4=" + str(x4) + " | №5=" + str(x5) + " | №6=" + str(x6) + " | №7=" + str(x7) + " | №8=" + str(x8) + " | №9=" + str(x9) + ' | Summ: ' + str(x10) + ' | Close: ' + str(btc_usd_90Days['Close'].iloc[-1]))
 
-    return " №1=" + str(x1) + ' | №2=' + str(x2) + " | №3=" + str(x3) + " | №4=" + str(x4) + " | №5=" + str(x5) + " | №6=" + str(x6) + " | №7=" + str(x7) + " | №8=" + str(x8) + " | №9=" + str(x9) + ' | Summ: ' + str(x10) + ' | Close: ' + str(btc_usd_90Days['Close'].iloc[-1])
+    # return " №1=" + str(x1) + ' | №2=' + str(x2) + " | №3=" + str(x3) + " | №4=" + str(x4) + " | №5=" + str(x5) + " | №6=" + str(x6) + " | №7=" + str(x7) + " | №8=" + str(x8) + " | №9=" + str(x9) + ' | Summ: ' + str(x10) + ' | Close: ' + str(btc_usd_90Days['Close'].iloc[-1])
+    return [x10, btc_usd_90Days['Close'].iloc[-1]]
 
 
 
