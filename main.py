@@ -27,7 +27,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    return "<p><a href='/static/result.txt'>Перейти в точку входа</a>!</p>"
+    return "<p>123</p>"
     
 @app.route("/get-hydra")
 def getHydra():
